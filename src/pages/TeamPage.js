@@ -18,7 +18,7 @@ export const TeamPage = () => {
             fetchMatches();
         },
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        []
+        [teamName]
     );
 
     if (!team || !team.teamName) {
@@ -27,8 +27,8 @@ export const TeamPage = () => {
     return (
         <div className="TeamPage">
             <h1>{team.teamName}</h1>
-            <MatchDetailCard match={team.matches[0]} />
-            {team.matches.slice(1).map(match => <MatchSmallCard match={match} />)}
+            <MatchDetailCard teamName={team.teamName} match={team.matches[0]} />
+            {team.matches.slice(1).map(match => <MatchSmallCard match={match} teamName={team.teamName} />)}
         </div>
     );
 }
