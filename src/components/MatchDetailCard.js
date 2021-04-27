@@ -6,7 +6,6 @@ export const MatchDetailCard = ({ teamName, match }) => {
     const otherTeam = match.team1 === teamName ? match.team2 : match.team1;
     return (
         <div className="MatchDetailCard">
-            <h1>Latest Match</h1>
             <h1>vs <Link to={`/teams/${otherTeam}`}>{otherTeam}</Link></h1>
             <h2>{match.date}</h2>
             <h3>{match.venue}</h3>
